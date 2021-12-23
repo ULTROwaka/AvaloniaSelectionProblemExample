@@ -39,7 +39,7 @@ namespace AvaloniaSelectionProblemExample.ViewModels
                 .Sort(sort)
                 .ObserveOn(RxApp.MainThreadScheduler)
                 .Bind(out _itemsList)
-                .Subscribe();
+                .Subscribe(_ => this.RaisePropertyChanged(nameof(SelectedItem)));
         }
 
         private SortExpressionComparer<string> BuildThemeSort(SortDirection direction)
