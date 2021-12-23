@@ -1,0 +1,21 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaSelectionProblemExample.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvaloniaSelectionProblemExample.Views.MainWindow"
+        Icon="/Assets/avalonia-logo.ico"
+		Width="400" Height="300"
+        Title="AvaloniaSelectionProblemExample">
+
+	<Grid RowDefinitions="30,250" ColumnDefinitions="200,150">
+		<ComboBox Grid.Row="0" Grid.Column="0" Items="{Binding Directions}" SelectedItem="{Binding SortingDirection}"/>
+		<ListBox Grid.Row="1" Grid.Column="0" Items="{Binding ItemsList}" SelectedItem="{Binding SelectedItem}" SelectionMode="AlwaysSelected"/>
+		<StackPanel Grid.Row="1" Grid.Column="1">
+			<TextBlock Text="SelectedItem:"/>
+			<TextBlock Text="{Binding SelectedItem}"/>
+		</StackPanel>  
+	</Grid>
+
+</Window>
